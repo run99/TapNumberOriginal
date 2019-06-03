@@ -1,19 +1,14 @@
 package com.example.tapnumber;
 
-import android.graphics.Color;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import static android.graphics.Color.rgb;
 
@@ -25,17 +20,7 @@ public class MasterActivity extends AppCompatActivity {
     int next = 0;
     TextView text, display;
 
-
-
-
-
-
-    //モグラ参考
-    static float time;
-    Timer timer;
-    TimerTask timerTask;
-    Handler h;
-
+    Button button1, button2, button3, button4, button5, button6,button7, button8, button9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,24 +30,17 @@ public class MasterActivity extends AppCompatActivity {
         text = findViewById(R.id.textView);
         display = findViewById(R.id.displayText);
 
-        h = new Handler();
+        button1 = findViewById(R.id.button);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+        button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
+        button8 = findViewById(R.id.button8);
+        button9 = findViewById(R.id.button9);
 
-        time = 0.0f;//タイマーの初期化
-
-        timer = new Timer();
-        timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                time += 0.1d;
-
-            }
-        };
-        timer.schedule(timerTask,100, 100);
-
-        LinearLayout linear1 =findViewById(R.id.Linear1);
-        LinearLayout linear2 = findViewById(R.id.Linear2);
-        LinearLayout linear3 = findViewById(R.id.Linear3);
-
+        start();
 
     }
 
@@ -102,57 +80,36 @@ public class MasterActivity extends AppCompatActivity {
 
     }
 
-    public void dynamic(){
+    public void dynamic() {
 
-        Button button1 = new Button(this);
-        button1.setText("1");
-        button1.setTextSize(60);
-        button1.setBackgroundResource(R.color.yellow);
+        button1.setTag(1);
+        button2.setTag(2);
+        button3.setTag(3);
+        button4.setTag(4);
+        button5.setTag(5);
+        button6.setTag(6);
+        button7.setTag(7);
+        button8.setTag(8);
+        button9.setTag(9);
+
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        List list = Arrays.asList(array);
+
+        Collections.shuffle(Collections.singletonList(list));
 
 
-        Button button2 = new Button(this);
-        button2.setText("2");
-        button2.setTextSize(60);
-        button2.setBackgroundResource(R.color.blue);
-
-        Button button3 = new Button(this);
-        button3.setText("3");
-        button3.setTextSize(60);
-        button3.setBackgroundResource(R.color.red);
-
-        Button button4 = new Button(this);
-        button4.setText("4");
-        button4.setTextSize(60);
-        button4.setBackgroundResource(R.color.red);
-
-        Button button5 = new Button(this);
-        button5.setText("5");
-        button5.setTextSize(60);
-        button5.setBackgroundResource(R.color.yellow);
-
-        Button button6 = new Button(this);
-        button6.setText("6");
-        button6.setTextSize(60);
-        button6.setBackgroundResource(R.color.blue);
-
-        Button button7 = new Button(this);
-        button7.setText("7");
-        button7.setTextSize(60);
-        button7.setBackgroundResource(R.color.blue);
-
-        Button button8 = new Button(this);
-        button8.setText("8");
-        button8.setTextSize(60);
-        button8.setBackgroundResource(R.color.red);
-
-        Button button9 = new Button(this);
-        button9.setText("9");
-        button9.setTextSize(60);
-        button9.setBackgroundResource(R.color.yellow);
-
-        ArrayList<Button> list = new ArrayList<Button>();
-
-        Collection.class(button1, button2,button3,button4,button5,button6,button7,button8, button9);
+        button1.getTag((Integer) list.get(1));
+        button2.getTag((Integer) list.get(2));
+        button3.getTag((Integer) list.get(3));
+        button4.getTag((Integer) list.get(4));
+        button5.getTag((Integer) list.get(5));
+        button6.getTag((Integer) list.get(6));
+        button7.getTag((Integer) list.get(7));
+        button8.getTag((Integer) list.get(8));
+        button9.getTag((Integer) list.get(9));
 
     }
+
+
 }
