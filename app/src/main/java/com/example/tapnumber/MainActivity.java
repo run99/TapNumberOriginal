@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         text = findViewById(R.id.textView);
         display = findViewById(R.id.displayText);
         start();
@@ -55,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
         timer.schedule(timerTask,100, 100);
 
     }
-
-
 
 
     //start()メソッドの作成
@@ -86,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
 
         text.setText(mondai);
         seikai = 0;
-
-
 
 
         display.setText(String.valueOf(next) + "/5");

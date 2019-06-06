@@ -12,6 +12,18 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FE9A2E"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:text="上級"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -175,6 +187,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/reloadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </LinearLayout>
